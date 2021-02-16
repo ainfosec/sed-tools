@@ -1,4 +1,4 @@
-![sed-tools](https://github.com/ainfosec/sed-tools/raw/master/.github/images/logo.png)
+![sed-tools](https://raw.githubusercontent.com/ainfosec/sed-tools/main/.github/images/logo.png)
 
 ## Description
 TBD
@@ -23,7 +23,7 @@ Check out our [Can You Hack It?®](https://www.canyouhackit.com) challenge and t
 
 <p align="center">
   <a href="https://www.ainfosec.com/">
-    <img src="https://github.com/ainfosec/sed-tools/raw/master/.github/images/ais.png" alt="ais" height="100" />
+    <img src="https://raw.githubusercontent.com/ainfosec/sed-tools/main/.github/images/ais.png" alt="ais" height="100" />
   </a>
 </p>
 
