@@ -1,0 +1,87 @@
+\hypertarget{structSHA1Context}{}\section{S\+H\+A1\+Context Struct Reference}
+\label{structSHA1Context}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+
+
+{\ttfamily \#include $<$sha1.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{structSHA1Context_a33ef73a6e4eb34e1e251662c18e36ad3}{Message\+\_\+\+Digest} \mbox{[}5\mbox{]}
+\item 
+unsigned \hyperlink{structSHA1Context_abefecf979a4abf17d8783c32232d6b09}{Length\+\_\+\+Low}
+\item 
+unsigned \hyperlink{structSHA1Context_afed0372c5ff46f0005c1595c0cc029fb}{Length\+\_\+\+High}
+\item 
+unsigned char \hyperlink{structSHA1Context_ac29c71f56046f207c9c0f7bcc0bd8a2e}{Message\+\_\+\+Block} \mbox{[}64\mbox{]}
+\item 
+int \hyperlink{structSHA1Context_a833f19a2e09ac6615dc77525f336c598}{Message\+\_\+\+Block\+\_\+\+Index}
+\item 
+int \hyperlink{structSHA1Context_a3722d8be51c7a1a4e8083c3f1a5adfa1}{Computed}
+\item 
+int \hyperlink{structSHA1Context_af549987a735051dc4b3b50b106fde5bb}{Corrupted}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure will hold context information for the hashing operation 
+
+Definition at line 30 of file sha1.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structSHA1Context_a3722d8be51c7a1a4e8083c3f1a5adfa1}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Computed@{Computed}}
+\index{Computed@{Computed}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Computed}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A1\+Context\+::\+Computed}\label{structSHA1Context_a3722d8be51c7a1a4e8083c3f1a5adfa1}
+Is the digest computed? 
+
+Definition at line 40 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_af549987a735051dc4b3b50b106fde5bb}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Corrupted@{Corrupted}}
+\index{Corrupted@{Corrupted}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Corrupted}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A1\+Context\+::\+Corrupted}\label{structSHA1Context_af549987a735051dc4b3b50b106fde5bb}
+Is the message digest corruped? 
+
+Definition at line 41 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_afed0372c5ff46f0005c1595c0cc029fb}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Length\+\_\+\+High@{Length\+\_\+\+High}}
+\index{Length\+\_\+\+High@{Length\+\_\+\+High}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Length\+\_\+\+High}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+H\+A1\+Context\+::\+Length\+\_\+\+High}\label{structSHA1Context_afed0372c5ff46f0005c1595c0cc029fb}
+Message length in bits 
+
+Definition at line 35 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_abefecf979a4abf17d8783c32232d6b09}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Length\+\_\+\+Low@{Length\+\_\+\+Low}}
+\index{Length\+\_\+\+Low@{Length\+\_\+\+Low}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Length\+\_\+\+Low}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+H\+A1\+Context\+::\+Length\+\_\+\+Low}\label{structSHA1Context_abefecf979a4abf17d8783c32232d6b09}
+Message length in bits 
+
+Definition at line 34 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_ac29c71f56046f207c9c0f7bcc0bd8a2e}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Message\+\_\+\+Block@{Message\+\_\+\+Block}}
+\index{Message\+\_\+\+Block@{Message\+\_\+\+Block}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Message\+\_\+\+Block}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char S\+H\+A1\+Context\+::\+Message\+\_\+\+Block\mbox{[}64\mbox{]}}\label{structSHA1Context_ac29c71f56046f207c9c0f7bcc0bd8a2e}
+512-\/bit message blocks 
+
+Definition at line 37 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_a833f19a2e09ac6615dc77525f336c598}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Message\+\_\+\+Block\+\_\+\+Index@{Message\+\_\+\+Block\+\_\+\+Index}}
+\index{Message\+\_\+\+Block\+\_\+\+Index@{Message\+\_\+\+Block\+\_\+\+Index}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Message\+\_\+\+Block\+\_\+\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int S\+H\+A1\+Context\+::\+Message\+\_\+\+Block\+\_\+\+Index}\label{structSHA1Context_a833f19a2e09ac6615dc77525f336c598}
+Index into message block array 
+
+Definition at line 38 of file sha1.\+h.
+
+\hypertarget{structSHA1Context_a33ef73a6e4eb34e1e251662c18e36ad3}{}\index{S\+H\+A1\+Context@{S\+H\+A1\+Context}!Message\+\_\+\+Digest@{Message\+\_\+\+Digest}}
+\index{Message\+\_\+\+Digest@{Message\+\_\+\+Digest}!S\+H\+A1\+Context@{S\+H\+A1\+Context}}
+\subsubsection[{Message\+\_\+\+Digest}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+H\+A1\+Context\+::\+Message\+\_\+\+Digest\mbox{[}5\mbox{]}}\label{structSHA1Context_a33ef73a6e4eb34e1e251662c18e36ad3}
+Message Digest (output) 
+
+Definition at line 32 of file sha1.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/crypto/sha1.\+h\end{DoxyCompactItemize}

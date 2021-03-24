@@ -1,5 +1,8 @@
 ![sed-tools](https://raw.githubusercontent.com/ainfosec/sed-tools/main/.github/images/logo.png)
 
+## DISCLAIMER
+This repository is a Work-In-Progress. This codebase has not been tested and will most likely not build or run
+
 ## Description
 TBD
 

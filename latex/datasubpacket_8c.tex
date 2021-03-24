@@ -1,0 +1,59 @@
+\hypertarget{datasubpacket_8c}{}\section{src/packet\+\_\+tokenization/datasubpacket.c File Reference}
+\label{datasubpacket_8c}\index{src/packet\+\_\+tokenization/datasubpacket.\+c@{src/packet\+\_\+tokenization/datasubpacket.\+c}}
+
+
+Initializes the datasubpacket portion of the compacket.  
+
+
+{\ttfamily \#include \char`\"{}../include/packet\+\_\+tokenization/datasubpacket.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{datasubpacket_8c_abf9cd2c9ea9d3a5c50e09750f30a8d22}{datasubpacket\+\_\+create} (struct \hyperlink{structdataSubpacket__t}{data\+Subpacket\+\_\+t} $\ast$data\+Subpacket)
+\begin{DoxyCompactList}\small\item\em Initialize the Data Sub\+Packet for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initializes the datasubpacket portion of the compacket. 
+
+This file contains the function definition that will create and initialize the datasubpacket within the compacket
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000009}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{datasubpacket_8c_source}{datasubpacket.\+c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{datasubpacket_8c_abf9cd2c9ea9d3a5c50e09750f30a8d22}{}\index{datasubpacket.\+c@{datasubpacket.\+c}!datasubpacket\+\_\+create@{datasubpacket\+\_\+create}}
+\index{datasubpacket\+\_\+create@{datasubpacket\+\_\+create}!datasubpacket.\+c@{datasubpacket.\+c}}
+\subsubsection[{datasubpacket\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void datasubpacket\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf data\+Subpacket\+\_\+t} $\ast$}]{data\+Sub\+Packet}
+\end{DoxyParamCaption}
+)}\label{datasubpacket_8c_abf9cd2c9ea9d3a5c50e09750f30a8d22}
+
+
+Initialize the Data Sub\+Packet for S\+E\+D communication. 
+
+Creates the data subpacket which is contained within the packet which in itself is contained within the compacket. This function creates that subpacket and places it in the correct location within the compacket
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the location where the subpacket is to be stored. (Right after the packet) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file datasubpacket.\+c.
+

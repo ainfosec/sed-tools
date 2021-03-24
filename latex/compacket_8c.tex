@@ -1,0 +1,62 @@
+\hypertarget{compacket_8c}{}\section{src/packet\+\_\+tokenization/compacket.c File Reference}
+\label{compacket_8c}\index{src/packet\+\_\+tokenization/compacket.\+c@{src/packet\+\_\+tokenization/compacket.\+c}}
+
+
+Initializes the overall Compacket to be transmitted.  
+
+
+{\ttfamily \#include \char`\"{}../include/packet\+\_\+tokenization/compacket.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{compacket_8c_a3e8df2499ef621597cc7d37d444d834a}{compacket\+\_\+create} (struct \hyperlink{structcomPacket__t}{com\+Packet\+\_\+t} $\ast$com\+Packet, struct \hyperlink{structsedContext}{sed\+Context} $\ast$sed\+Ctx)
+\begin{DoxyCompactList}\small\item\em Initialize compacket for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initializes the overall Compacket to be transmitted. 
+
+This file contains the function defintion to create and initialize the overall compacket.
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000008}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{compacket_8c_source}{compacket.\+c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{compacket_8c_a3e8df2499ef621597cc7d37d444d834a}{}\index{compacket.\+c@{compacket.\+c}!compacket\+\_\+create@{compacket\+\_\+create}}
+\index{compacket\+\_\+create@{compacket\+\_\+create}!compacket.\+c@{compacket.\+c}}
+\subsubsection[{compacket\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void compacket\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf com\+Packet\+\_\+t} $\ast$}]{com\+Packet, }
+\item[{struct {\bf sed\+Context} $\ast$}]{sed\+Ctx}
+\end{DoxyParamCaption}
+)}\label{compacket_8c_a3e8df2499ef621597cc7d37d444d834a}
+
+
+Initialize compacket for S\+E\+D communication. 
+
+Creates the overall compacket, which is the primary unit of communication transmitted as the payload. This function creates that compacket and initialize everything within it
+
+
+\begin{DoxyParams}{Parameters}
+{\em com\+Packet} & Location where the compacket should be stored \\
+\hline
+{\em sed\+Ctx} & Pointer to the Sed context struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file compacket.\+c.
+
