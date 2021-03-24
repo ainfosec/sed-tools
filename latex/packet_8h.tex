@@ -1,0 +1,99 @@
+\hypertarget{packet_8h}{}\section{src/include/packet\+\_\+tokenization/packet.h File Reference}
+\label{packet_8h}\index{src/include/packet\+\_\+tokenization/packet.\+h@{src/include/packet\+\_\+tokenization/packet.\+h}}
+
+
+Prototypes that initializes the packet portion of the compacket.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../sed/sed.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpacket__t}{packet\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{packet_8h_a45ada89276e57a46a5994c10ee1c0e12}{}\#define {\bfseries S\+I\+Z\+E\+O\+F\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+H\+D\+R}~sizeof(struct \hyperlink{structpacket__t}{packet\+\_\+t})\label{packet_8h_a45ada89276e57a46a5994c10ee1c0e12}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{packet_8h_af9aaac467afc65e5bed6a004120e2c3e}{}struct \hyperlink{structpacket__t}{packet\+\_\+t} {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))\label{packet_8h_af9aaac467afc65e5bed6a004120e2c3e}
+
+\item 
+void \hyperlink{packet_8h_a6db4ca364d64d2de6a97fafb7cb505d1}{packet\+\_\+create} (struct \hyperlink{structsedContext}{sed\+Context} $\ast$sed\+Ctx, struct \hyperlink{structpacket__t}{packet\+\_\+t} $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Initialize the packet for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{packet_8h_a6b775e294379f5bc7a6dfaeb5c9fcfef}{}uint32\+\_\+t {\bfseries session\+T\+Per}\label{packet_8h_a6b775e294379f5bc7a6dfaeb5c9fcfef}
+
+\item 
+\hypertarget{packet_8h_a3eccabb56498b20dad385cddbf8249c6}{}uint32\+\_\+t {\bfseries session\+Host}\label{packet_8h_a3eccabb56498b20dad385cddbf8249c6}
+
+\item 
+\hypertarget{packet_8h_ae4d5a5811264277c4dbd1f3540465250}{}uint32\+\_\+t {\bfseries seq\+Number}\label{packet_8h_ae4d5a5811264277c4dbd1f3540465250}
+
+\item 
+\hypertarget{packet_8h_a5a6ed8c04a3db86066924b1a1bf4dad3}{}uint16\+\_\+t {\bfseries reserved}\label{packet_8h_a5a6ed8c04a3db86066924b1a1bf4dad3}
+
+\item 
+\hypertarget{packet_8h_abd513c66afc3195c8506d8a2f127f605}{}uint16\+\_\+t {\bfseries ack\+Type}\label{packet_8h_abd513c66afc3195c8506d8a2f127f605}
+
+\item 
+\hypertarget{packet_8h_a665b8ca28bdf6983ed918076f61e0f7d}{}uint32\+\_\+t {\bfseries acknowledgement}\label{packet_8h_a665b8ca28bdf6983ed918076f61e0f7d}
+
+\item 
+\hypertarget{packet_8h_aebb70c2aab3407a9f05334c47131a43b}{}uint32\+\_\+t {\bfseries length}\label{packet_8h_aebb70c2aab3407a9f05334c47131a43b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototypes that initializes the packet portion of the compacket. 
+
+This file contains a structure that identifies all of the members that are needed to create the packet portion of the compacket. It also contains a prototype that initialize the packet
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000005}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{packet_8h_source}{packet.\+h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{packet_8h_a6db4ca364d64d2de6a97fafb7cb505d1}{}\index{packet.\+h@{packet.\+h}!packet\+\_\+create@{packet\+\_\+create}}
+\index{packet\+\_\+create@{packet\+\_\+create}!packet.\+h@{packet.\+h}}
+\subsubsection[{packet\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sed\+Context} $\ast$}]{sed\+Ctx, }
+\item[{struct {\bf packet\+\_\+t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}\label{packet_8h_a6db4ca364d64d2de6a97fafb7cb505d1}
+
+
+Initialize the packet for S\+E\+D communication. 
+
+Creates the packet which is contained within the compacket This function creates that packet and places it in the correct location within the compacket
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the location where the packet is to be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file packet.\+c.
+

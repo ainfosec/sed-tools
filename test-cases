@@ -1,0 +1,74 @@
+[] Attempt to login with default admin account "admin"
+	[] When prompted for a username, enter "admin"
+	[] When prompted for a password, enter "password" {"Press B to boot the drive. Press A to enter the Administrator Menu" should be displayed}
+	[] Press "B" to select the boot drive option, {"Drive Unlocked. Rebooting..." OS should boot up}
+
+[] Attempt to login with default admin account "admin" and access admin menu
+	[] Power off the Machine
+	[] Power on the Machine
+    [] When prompted for a username, enter "admin"
+	[] When prompted for a password, enter "password" {Press B to boot the drive. Press A to enter the Administrator Menu" should be displayed}	
+	[] Press "A" to load up the administrator menu {The Administrator Menu should be displayed}
+	[] Press 4 to Boot the drive
+
+[] Attempt to login with an unknown account 3 times
+	[] When prompted for a username, enter "user1". "Invalid Username" is displayed.
+	[] When prompted for a username, enter "user2". "Invalid Username" is displayed
+	[] When prompted for a username, enter "user3". "Invalid Username" is displayed. "Maximum number of login attempts exceeded" is displayed. The machine reboots
+
+[] Enter an incorrect password 3 times
+	[] Enter the password "password1". "Invalid password should be displayed". "Enter password" is displayed.
+	[] Enter the password "password2". "Invalid password should be displayed". "Enter password" is displayed.
+	[] Enter the password "password3". "Maximum number of login attempts exceeded", should be displayed. The machine reboots
+
+[] Login with default account and access the admin menu
+	[] Power off the Machine
+	[] Power on the Machine
+	[] When prompted for a username, enter "admin"
+	[] When prompted for a password, enter "password" {Press B to boot the drive. Press A to enter the Administrator Menu" should be displayed}
+	[] Press "A" to load up the administrator menu {The Administrator Menu should be displayed}
+
+[] Navigating Admin Menu
+	[] Press 1 to  enter the Account Management Screen. {"Account Management" Screen should be displayed}
+	[] Press 7 to go back to the Administrator Menu. {"Administrator Menu Screen should be displayed}
+	[] Press 1 to enter the Account Management Screen. {"Account Management" Screen should be displayed}
+	[] Press 6 to view the current password complexity configuration {"Current Password Complexity Configuration" should be displayed with the default configuration listed}
+			[] Ensure that "Minimum Number of Characters" is set to           8
+			[] Ensure that "Maximum Number of Characters" is set to          32
+			[] Ensure that "Minimum Number of UpperCase Characters is set to  1
+			[] Ensure that "Minimum Number of Numeric Characters is set to    1
+			[] Ensure taht "Minimum Number of Special Characters is set to    1
+			[] Ensure that "Maximum Number of Sequence Characters is set to   5
+	[] Press K to keep the current configuration. {"Account Management" Screen is displayed}
+	[] Press 6 to view the current password complexity configuration. {"Currrent Password Complexit Configuration" should be displayed. Every value should be the same from the previous step}
+	[] Press k to keep the current configuration {"Account Management" Scrren is displayed}
+	[] Press 5 to List all of the current users on the drive. {A list of the Current User Accounts and Current Administrator accounts should be displayed.}
+	[] Press any key to continue. {"Account Management" screen should be displayed}
+
+[] Create Maximum Number of User accounts (2)
+	[] Press 1 to Create a User. {Prompt to "Enter new Username:" should be displayed}
+	[] Enter the username "user1" and press enter.{Prompt asking what type of account the user will have should be displayed, with options Normal User and Administrator}
+	[] Press 1 to create a Normal user. {Prompt asking Choose an authentication type should be displayed}
+	[] Press 1 to make the authentication type password {"Please set a password for username should be displayed}
+	[] Enter the password "Password1!" {"Please re-enter the password:" should be displayed}
+	[] Enter the password "Password1!" {"Successfully Created User" is displayed. Administrator Menu is displayed}
+	[] Repeat steps to create another user "user2" with the same credentials.
+	[] In the Account Management Menu select option 5 to list all of the current user {"Current User Accounts" and Current Administrator Accounts" should be displayed.}
+	[] Ensure that both "user1" and "user2" are created and listed under "Current User Accounts". 
+	[] Ensure that "Number of available slots to create an User" is set to 0
+	[] Press any key to continue
+
+[] Attempt to create More User accounts than allotted (1 extra)
+	[] Press 1 to Createa User. {Prompt to "Enter new Username:" should be displayed}
+	[] Enter the username "user3" and press enter. {Prompt asking what type of account the user will have should be displayed, with options Normal User and Administrator}
+	[] Press1 to create a Normal User. {"Error: Unable to create user. Maximum number of user accounts already created"}
+	[] In the Account Management screen, Press 5 to list User accounts {List of user accounts and admin accounts should be displayed}
+	[] Ensure that "user1" and "user2" are still created, and "user3" is not created
+	[] Press any key to continue
+
+
+ 
+
+[] Attempt to overflow the username with a long name
+	[] When prompted for a username, enter a long name, about 50 characters 
+	[] Ensure that the program doesnt crash, nor the username field gets bypassed

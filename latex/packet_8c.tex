@@ -1,0 +1,60 @@
+\hypertarget{packet_8c}{}\section{src/packet\+\_\+tokenization/packet.c File Reference}
+\label{packet_8c}\index{src/packet\+\_\+tokenization/packet.\+c@{src/packet\+\_\+tokenization/packet.\+c}}
+
+
+Initializes the packet portion of the compacket.  
+
+
+{\ttfamily \#include \char`\"{}../include/packet\+\_\+tokenization/packet.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{packet_8c_a6db4ca364d64d2de6a97fafb7cb505d1}{packet\+\_\+create} (struct \hyperlink{structsedContext}{sed\+Context} $\ast$sed\+Ctx, struct \hyperlink{structpacket__t}{packet\+\_\+t} $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Initialize the packet for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initializes the packet portion of the compacket. 
+
+This file contains the function definition that will create and initialize the packet portion of the compacket
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000010}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{packet_8c_source}{packet.\+c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{packet_8c_a6db4ca364d64d2de6a97fafb7cb505d1}{}\index{packet.\+c@{packet.\+c}!packet\+\_\+create@{packet\+\_\+create}}
+\index{packet\+\_\+create@{packet\+\_\+create}!packet.\+c@{packet.\+c}}
+\subsubsection[{packet\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void packet\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sed\+Context} $\ast$}]{sed\+Ctx, }
+\item[{struct {\bf packet\+\_\+t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}\label{packet_8c_a6db4ca364d64d2de6a97fafb7cb505d1}
+
+
+Initialize the packet for S\+E\+D communication. 
+
+Creates the packet which is contained within the compacket This function creates that packet and places it in the correct location within the compacket
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the location where the packet is to be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file packet.\+c.
+

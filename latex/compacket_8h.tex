@@ -1,0 +1,95 @@
+\hypertarget{compacket_8h}{}\section{src/include/packet\+\_\+tokenization/compacket.h File Reference}
+\label{compacket_8h}\index{src/include/packet\+\_\+tokenization/compacket.\+h@{src/include/packet\+\_\+tokenization/compacket.\+h}}
+
+
+Prototypes that initializes the overall Compacket to be transmitted.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../sed/sed.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcomPacket__t}{com\+Packet\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{compacket_8h_a61f346fd30535792963ecda4a16aee27}{}\#define {\bfseries S\+I\+Z\+E\+O\+F\+\_\+\+C\+O\+M\+P\+A\+C\+K\+E\+T\+\_\+\+H\+D\+R}~sizeof(struct \hyperlink{structcomPacket__t}{com\+Packet\+\_\+t})\label{compacket_8h_a61f346fd30535792963ecda4a16aee27}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{compacket_8h_a6ba59c208a9aab7797df2fd89fdd8fc7}{}struct \hyperlink{structcomPacket__t}{com\+Packet\+\_\+t} {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))\label{compacket_8h_a6ba59c208a9aab7797df2fd89fdd8fc7}
+
+\item 
+void \hyperlink{compacket_8h_a3e8df2499ef621597cc7d37d444d834a}{compacket\+\_\+create} (struct \hyperlink{structcomPacket__t}{com\+Packet\+\_\+t} $\ast$com\+Packet, struct \hyperlink{structsedContext}{sed\+Context} $\ast$sed\+Ctx)
+\begin{DoxyCompactList}\small\item\em Initialize compacket for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{compacket_8h_aa43c4c21b173ada1b6b7568956f0d650}{}uint32\+\_\+t {\bfseries reserved}\label{compacket_8h_aa43c4c21b173ada1b6b7568956f0d650}
+
+\item 
+\hypertarget{compacket_8h_a5ded0f0d4f76d66ea8b3d2b930f27e8e}{}uint32\+\_\+t {\bfseries extended\+Com\+Id}\label{compacket_8h_a5ded0f0d4f76d66ea8b3d2b930f27e8e}
+
+\item 
+\hypertarget{compacket_8h_aaedef21af9a0c1476fafb574bd013af4}{}uint32\+\_\+t {\bfseries outstanding\+Data}\label{compacket_8h_aaedef21af9a0c1476fafb574bd013af4}
+
+\item 
+\hypertarget{compacket_8h_adb59296e12348bc9bdabacbc43d69e7d}{}uint32\+\_\+t {\bfseries min\+Transfer}\label{compacket_8h_adb59296e12348bc9bdabacbc43d69e7d}
+
+\item 
+\hypertarget{compacket_8h_aebb70c2aab3407a9f05334c47131a43b}{}uint32\+\_\+t {\bfseries length}\label{compacket_8h_aebb70c2aab3407a9f05334c47131a43b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototypes that initializes the overall Compacket to be transmitted. 
+
+This file contains a structure that identifies all of the members that are needed to create the compacket. It also contains a prototype that initialize the entire
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000003}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{compacket_8h_source}{compacket.\+h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{compacket_8h_a3e8df2499ef621597cc7d37d444d834a}{}\index{compacket.\+h@{compacket.\+h}!compacket\+\_\+create@{compacket\+\_\+create}}
+\index{compacket\+\_\+create@{compacket\+\_\+create}!compacket.\+h@{compacket.\+h}}
+\subsubsection[{compacket\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void compacket\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf com\+Packet\+\_\+t} $\ast$}]{com\+Packet, }
+\item[{struct {\bf sed\+Context} $\ast$}]{sed\+Ctx}
+\end{DoxyParamCaption}
+)}\label{compacket_8h_a3e8df2499ef621597cc7d37d444d834a}
+
+
+Initialize compacket for S\+E\+D communication. 
+
+Creates the overall compacket, which is the primary unit of communication transmitted as the payload. This function creates that compacket and initialize everything within it
+
+
+\begin{DoxyParams}{Parameters}
+{\em com\+Packet} & Location where the compacket should be stored \\
+\hline
+{\em sed\+Ctx} & Pointer to the Sed context struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file compacket.\+c.
+

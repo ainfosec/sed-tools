@@ -1,0 +1,85 @@
+\hypertarget{datasubpacket_8h}{}\section{src/include/packet\+\_\+tokenization/datasubpacket.h File Reference}
+\label{datasubpacket_8h}\index{src/include/packet\+\_\+tokenization/datasubpacket.\+h@{src/include/packet\+\_\+tokenization/datasubpacket.\+h}}
+
+
+Prototype that initializes the datasubpacket portion of the compacket.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdataSubpacket__t}{data\+Subpacket\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{datasubpacket_8h_aea3746eb7abac93c16a5b821b04cfbe4}{}\#define {\bfseries S\+I\+Z\+E\+O\+F\+\_\+\+D\+A\+T\+A\+S\+U\+B\+P\+A\+C\+K\+E\+T\+\_\+\+H\+D\+R}~sizeof(struct \hyperlink{structdataSubpacket__t}{data\+Subpacket\+\_\+t})\label{datasubpacket_8h_aea3746eb7abac93c16a5b821b04cfbe4}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{datasubpacket_8h_a8ee12ff0a89ad6239bdc385cdf36a701}{}struct \hyperlink{structdataSubpacket__t}{data\+Subpacket\+\_\+t} {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))\label{datasubpacket_8h_a8ee12ff0a89ad6239bdc385cdf36a701}
+
+\item 
+void \hyperlink{datasubpacket_8h_a03552047cc1be05e4592e52c424917b6}{datasubpacket\+\_\+create} (struct \hyperlink{structdataSubpacket__t}{data\+Subpacket\+\_\+t} $\ast$data\+Sub\+Packet)
+\begin{DoxyCompactList}\small\item\em Initialize the Data Sub\+Packet for S\+E\+D communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{datasubpacket_8h_ac35c1fbebe2017fc1ca10f5803668dfd}{}uint64\+\_\+t {\bfseries reserved}\label{datasubpacket_8h_ac35c1fbebe2017fc1ca10f5803668dfd}
+
+\item 
+\hypertarget{datasubpacket_8h_aa17f8c9cac987d40965fa6d0f4c29c00}{}uint64\+\_\+t {\bfseries kind}\label{datasubpacket_8h_aa17f8c9cac987d40965fa6d0f4c29c00}
+
+\item 
+\hypertarget{datasubpacket_8h_aebb70c2aab3407a9f05334c47131a43b}{}uint32\+\_\+t {\bfseries length}\label{datasubpacket_8h_aebb70c2aab3407a9f05334c47131a43b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototype that initializes the datasubpacket portion of the compacket. 
+
+This file contains a structure that identifies all of the members that are needed to create the datasubpacket portion of the compacket. It also contains a prototype that initialize the datasubpacket
+
+\begin{DoxyAuthor}{Author}
+Maurice Gale 
+
+Scott Markgraf 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000004}{Bug}]No Bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{datasubpacket_8h_source}{datasubpacket.\+h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{datasubpacket_8h_a03552047cc1be05e4592e52c424917b6}{}\index{datasubpacket.\+h@{datasubpacket.\+h}!datasubpacket\+\_\+create@{datasubpacket\+\_\+create}}
+\index{datasubpacket\+\_\+create@{datasubpacket\+\_\+create}!datasubpacket.\+h@{datasubpacket.\+h}}
+\subsubsection[{datasubpacket\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}void datasubpacket\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{struct {\bf data\+Subpacket\+\_\+t} $\ast$}]{data\+Sub\+Packet}
+\end{DoxyParamCaption}
+)}\label{datasubpacket_8h_a03552047cc1be05e4592e52c424917b6}
+
+
+Initialize the Data Sub\+Packet for S\+E\+D communication. 
+
+Creates the data subpacket which is contained within the packet which in itself is contained within the compacket. This function creates that subpacket and places it in the correct location within the compacket
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the location where the subpacket is to be stored. (Right after the packet) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file datasubpacket.\+c.
+

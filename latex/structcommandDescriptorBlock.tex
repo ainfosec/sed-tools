@@ -1,0 +1,228 @@
+\hypertarget{structcommandDescriptorBlock}{\section{command\+Descriptor\+Block Struct Reference}
+\label{structcommandDescriptorBlock}\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_aaf9440d8f5eaef468ced9ccf5a35a198}{operation\+Code}\+:8
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a32ebf87ad241e36d46bf924327b1737e}{multiple\+Count}\+:3
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a0c372c0939eb5afd3e675f4fa39b0d64}{protocol}\+:4
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_ab4614377ec86f8cabe7b05195bf9c986}{extend}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_abb39bf783f6d828c385f16b0909bdaaf}{off\+Line}\+:2
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a8d174a9a3024662d102a749c00cca1be}{check\+Cond}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_aceaec39d01724e696ce1e60c96e72d11}{reserved}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a31331001191953ebd586ef73c3a876b3}{t\+Dir}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a5a18bdc4bc910236e8aba0dec8fe88af}{byte\+Block}\+:1
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a610b82f3718b46e8cb797403c7f39a02}{t\+Length}\+:2
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a5c572c996c2b2392af8a7433791b9291}{features\+High}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_abddd3964b7d29d274b01b9f76019435f}{features\+Low}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a4798d143da5fadb3b44fe820f9c96930}{reserved\+Sector\+Count}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a2e0f28faecba0a67ee5349cad5f011e9}{sector\+Count}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a4a6bcc946c72cd6c5aa8060fc2521010}{reserved\+Lba\+Low}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a43d0f9e75b22b331a36355ca2572be62}{lba\+Low}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a8d556f9d126816a3a06e2422630a43f4}{reserved\+Lba\+Mid}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a9bb5feca3b443efb128ceeada152a7d4}{lba\+Mid}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a1703f9519bff3df0efa2c19b2896244f}{reserved\+Lba\+High}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_aa58b2d4228c939d16a8ba54b5e4c5d8f}{lba\+High}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_a41685417208b97377497f29759516529}{device}
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_ab3763a8225a9c677c95f6253b789ad70}{command}\+:8
+\item 
+uint8\+\_\+t \hyperlink{structcommandDescriptorBlock_ac8314ebf9163ee2e6682ed3e02f4edd8}{control}\+:8
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 311 of file sed.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structcommandDescriptorBlock_a5a18bdc4bc910236e8aba0dec8fe88af}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!byte\+Block@{byte\+Block}}
+\index{byte\+Block@{byte\+Block}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{byte\+Block}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::byte\+Block}}\label{structcommandDescriptorBlock_a5a18bdc4bc910236e8aba0dec8fe88af}
+1 if tlength is \# of bytes, 0 if tlength is number of blocks 
+
+Definition at line 328 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a8d174a9a3024662d102a749c00cca1be}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!check\+Cond@{check\+Cond}}
+\index{check\+Cond@{check\+Cond}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{check\+Cond}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::check\+Cond}}\label{structcommandDescriptorBlock_a8d174a9a3024662d102a749c00cca1be}
+Set if you want A\+T\+A register info 
+
+Definition at line 324 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_ab3763a8225a9c677c95f6253b789ad70}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!command@{command}}
+\index{command@{command}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{command}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::command}}\label{structcommandDescriptorBlock_ab3763a8225a9c677c95f6253b789ad70}
+A\+T\+A command to call 
+
+Definition at line 348 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_ac8314ebf9163ee2e6682ed3e02f4edd8}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!control@{control}}
+\index{control@{control}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{control}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::control}}\label{structcommandDescriptorBlock_ac8314ebf9163ee2e6682ed3e02f4edd8}
+Control bit? 
+
+Definition at line 349 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a41685417208b97377497f29759516529}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!device@{device}}
+\index{device@{device}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::device}}\label{structcommandDescriptorBlock_a41685417208b97377497f29759516529}
+Value to load onto A\+T\+A dev. This is usually ignored 
+
+Definition at line 346 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_ab4614377ec86f8cabe7b05195bf9c986}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!extend@{extend}}
+\index{extend@{extend}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{extend}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::extend}}\label{structcommandDescriptorBlock_ab4614377ec86f8cabe7b05195bf9c986}
+Set if you want to use the reserved values 
+
+Definition at line 319 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a5c572c996c2b2392af8a7433791b9291}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!features\+High@{features\+High}}
+\index{features\+High@{features\+High}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{features\+High}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::features\+High}}\label{structcommandDescriptorBlock_a5c572c996c2b2392af8a7433791b9291}
+Used if extend is set. F\+O\+R L\+B\+A 48 
+
+Definition at line 336 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_abddd3964b7d29d274b01b9f76019435f}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!features\+Low@{features\+Low}}
+\index{features\+Low@{features\+Low}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{features\+Low}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::features\+Low}}\label{structcommandDescriptorBlock_abddd3964b7d29d274b01b9f76019435f}
+Bits 0\+:8. Usually protocol to use 
+
+Definition at line 337 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_aa58b2d4228c939d16a8ba54b5e4c5d8f}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!lba\+High@{lba\+High}}
+\index{lba\+High@{lba\+High}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{lba\+High}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::lba\+High}}\label{structcommandDescriptorBlock_aa58b2d4228c939d16a8ba54b5e4c5d8f}
+Bits 16\+:23 of the L\+B\+A 
+
+Definition at line 345 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a43d0f9e75b22b331a36355ca2572be62}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!lba\+Low@{lba\+Low}}
+\index{lba\+Low@{lba\+Low}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{lba\+Low}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::lba\+Low}}\label{structcommandDescriptorBlock_a43d0f9e75b22b331a36355ca2572be62}
+The low 0\+:8 bits of the L\+B\+A 
+
+Definition at line 341 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a9bb5feca3b443efb128ceeada152a7d4}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!lba\+Mid@{lba\+Mid}}
+\index{lba\+Mid@{lba\+Mid}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{lba\+Mid}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::lba\+Mid}}\label{structcommandDescriptorBlock_a9bb5feca3b443efb128ceeada152a7d4}
+Bits 8\+:15 of the L\+B\+A 
+
+Definition at line 343 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a32ebf87ad241e36d46bf924327b1737e}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!multiple\+Count@{multiple\+Count}}
+\index{multiple\+Count@{multiple\+Count}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{multiple\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::multiple\+Count}}\label{structcommandDescriptorBlock_a32ebf87ad241e36d46bf924327b1737e}
+To the power of 2, the number of sectors transferred per D\+R\+Q datablock 
+
+Definition at line 314 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_abb39bf783f6d828c385f16b0909bdaaf}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!off\+Line@{off\+Line}}
+\index{off\+Line@{off\+Line}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{off\+Line}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::off\+Line}}\label{structcommandDescriptorBlock_abb39bf783f6d828c385f16b0909bdaaf}
+The time in which the A\+T\+A status register is invalid after command acceptance 
+
+Definition at line 321 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_aaf9440d8f5eaef468ced9ccf5a35a198}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!operation\+Code@{operation\+Code}}
+\index{operation\+Code@{operation\+Code}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{operation\+Code}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::operation\+Code}}\label{structcommandDescriptorBlock_aaf9440d8f5eaef468ced9ccf5a35a198}
+Usually 0x85 for A\+T\+A passthrough 
+
+Definition at line 313 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a0c372c0939eb5afd3e675f4fa39b0d64}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!protocol@{protocol}}
+\index{protocol@{protocol}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::protocol}}\label{structcommandDescriptorBlock_a0c372c0939eb5afd3e675f4fa39b0d64}
+Determines what protocol to used 4 = P\+I\+O Data I\+N, 5 = P\+I\+O Data Out 6 = D\+M\+A, 7 = D\+M\+A queued 
+
+Definition at line 316 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_aceaec39d01724e696ce1e60c96e72d11}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!reserved@{reserved}}
+\index{reserved@{reserved}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{reserved}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::reserved}}\label{structcommandDescriptorBlock_aceaec39d01724e696ce1e60c96e72d11}
+Reserved bit 
+
+Definition at line 325 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a1703f9519bff3df0efa2c19b2896244f}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!reserved\+Lba\+High@{reserved\+Lba\+High}}
+\index{reserved\+Lba\+High@{reserved\+Lba\+High}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{reserved\+Lba\+High}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::reserved\+Lba\+High}}\label{structcommandDescriptorBlock_a1703f9519bff3df0efa2c19b2896244f}
+Used if extend is set. For L\+B\+A48 
+
+Definition at line 344 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a4a6bcc946c72cd6c5aa8060fc2521010}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!reserved\+Lba\+Low@{reserved\+Lba\+Low}}
+\index{reserved\+Lba\+Low@{reserved\+Lba\+Low}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{reserved\+Lba\+Low}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::reserved\+Lba\+Low}}\label{structcommandDescriptorBlock_a4a6bcc946c72cd6c5aa8060fc2521010}
+Used if extend is set. For L\+B\+A48 
+
+Definition at line 340 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a8d556f9d126816a3a06e2422630a43f4}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!reserved\+Lba\+Mid@{reserved\+Lba\+Mid}}
+\index{reserved\+Lba\+Mid@{reserved\+Lba\+Mid}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{reserved\+Lba\+Mid}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::reserved\+Lba\+Mid}}\label{structcommandDescriptorBlock_a8d556f9d126816a3a06e2422630a43f4}
+Used if extend is set. F\+O\+R L\+B\+A48 
+
+Definition at line 342 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a4798d143da5fadb3b44fe820f9c96930}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!reserved\+Sector\+Count@{reserved\+Sector\+Count}}
+\index{reserved\+Sector\+Count@{reserved\+Sector\+Count}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{reserved\+Sector\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::reserved\+Sector\+Count}}\label{structcommandDescriptorBlock_a4798d143da5fadb3b44fe820f9c96930}
+Used if extend is set. For L\+B\+A48 
+
+Definition at line 338 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a2e0f28faecba0a67ee5349cad5f011e9}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!sector\+Count@{sector\+Count}}
+\index{sector\+Count@{sector\+Count}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{sector\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::sector\+Count}}\label{structcommandDescriptorBlock_a2e0f28faecba0a67ee5349cad5f011e9}
+Number of sectors to transfer 
+
+Definition at line 339 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a31331001191953ebd586ef73c3a876b3}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!t\+Dir@{t\+Dir}}
+\index{t\+Dir@{t\+Dir}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{t\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::t\+Dir}}\label{structcommandDescriptorBlock_a31331001191953ebd586ef73c3a876b3}
+0 if transfer is host to device. 1 if transfer is device to host 
+
+Definition at line 326 of file sed.\+h.
+
+\hypertarget{structcommandDescriptorBlock_a610b82f3718b46e8cb797403c7f39a02}{\index{command\+Descriptor\+Block@{command\+Descriptor\+Block}!t\+Length@{t\+Length}}
+\index{t\+Length@{t\+Length}!command\+Descriptor\+Block@{command\+Descriptor\+Block}}
+\subsubsection[{t\+Length}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t command\+Descriptor\+Block\+::t\+Length}}\label{structcommandDescriptorBlock_a610b82f3718b46e8cb797403c7f39a02}
+Determines how to Transfer the data 0x00 = No data transfer, 0x01 = Transfer length is in the feature field, 0x02 = transfer length is in the sector count, 0x03 = transfer length is in S\+T\+P\+S\+I\+U 
+
+Definition at line 330 of file sed.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/sed/sed.\+h\end{DoxyCompactItemize}
