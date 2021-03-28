@@ -4,7 +4,7 @@
 This repository is a Work-In-Progress. This codebase has not been tested and will most likely not build or run
 
 ## Description
-TBD
+Sed-tools is a linux based toolsuite that aims to assist in the management of Opal compliant self encrypting hard drives.
 
 ## **Quick start**
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/ainfosec/sed-tools?color=brightgreen)
@@ -53,7 +53,7 @@ sed-tools provides some useful resources to learn how to use it including:
 -   **Unit Tests**: TBD
 
 If you have any questions, bugs, or feature requests, please feel free to ask on any of the following:
--   **Chat**: TBD
+-   **Chat**: IRC - #sed-tools on freenode
 -   **Issue Tracker**: <https://github.com/ainfosec/sed-tools/issues>
 
 If you would like to help:
