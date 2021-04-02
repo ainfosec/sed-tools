@@ -36,7 +36,7 @@ uninstall:
 
 .PHONY: clean
 clean:
-	rm -rf $(DEPDIR) $(OBJECTS)
+	rm -rf $(DEPDIR) $(OBJECTS) sed-tools
 
 
 include $(DEPENDS)
