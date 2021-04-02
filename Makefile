@@ -14,6 +14,9 @@ OBJECTS = $(patsubst %.c,%.o,$(SOURCE))
 
 DEPENDS = $(patsubst %.c,$(DEPDIR)/%.d,$(SOURCE))
 
+ifeq ($(PREFIX),)
+    PREFIX := /usr
+endif
 
 all: sed-tools
 
@@ -27,12 +30,13 @@ sed-tools: $(OBJECTS)
 	$(GCC) $(LDFLAGS) -o $@ $(OBJECTS)
 
 .PHONY: install
-install:
-	@echo "TODO"
+install: sed-tools
+	install -d $(DESTDIR)/$(PREFIX)/bin
+	install -m 755 sed-tools $(DESTDIR)/$(PREFIX)/bin
 
 .PHONY: uninstall
 uninstall:
-	@echo "TODO"
+	rm -f $(DESTDIR)/$(PREFIX)/bin/sed-tools
 
 .PHONY: clean
 clean:
