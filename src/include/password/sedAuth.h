@@ -18,7 +18,6 @@
 #include <dirent.h>
 #include "../sed/sed.h"
 #include "../password/password.h"
-#include "../crypto/crypto.h"
 #include "../account/account.h"
 
 
@@ -133,6 +132,7 @@ uint32_t setupPasswordForUser(struct sedContext *sedCtx, struct userInfo user, u
 uint32_t setupUsbForUser(struct sedContext *sedCtx, SedAccounts accountType, uint8_t newID, uint8_t *passwordHash);
 
 /*
+    TODO: Add this back once smartcard support has been updated
     @description: Sets up smartcard authentication with a password for the selected user
 
     @parameter sedCtx               - Sed context struct
@@ -140,10 +140,11 @@ uint32_t setupUsbForUser(struct sedContext *sedCtx, SedAccounts accountType, uin
     @parameter passwordHash         - Location to store the password hash
 
     @return - 0 on success, 1 on error
-*/
 uint32_t setupSmartCardWithPasswordForUser(struct sedContext *sedCtx, struct userInfo user, uint8_t *passwordHash);
+*/
 
 /*
+    TODO: Add this back once smartcard support has been updated
     @description: Sets up smartcard authentication for the selected user
 
     @parameter sedCtx               - Sed context struct
@@ -151,8 +152,8 @@ uint32_t setupSmartCardWithPasswordForUser(struct sedContext *sedCtx, struct use
     @parameter passwordHash         - Location to store the password hash
 
     @return - 0 on success, 1 on error
-*/
 uint32_t setupSmartCardForUser(struct sedContext *sedCtx, struct userInfo user, uint8_t *passwordHash);
+*/
 
 
 /*
@@ -197,22 +198,24 @@ int32_t passwordLogin(struct sedContext *sedCtx, char *pass);
 int32_t usbLogin(struct sedContext *sedCtx);
 
 /*
+    TODO: Add this back once smartcard support has been updated
     @description: Attempt to login using smartCard authentication.
 
     @parameter sedCtx    - Sed context Struct.
 
     @return 0 on success 
-*/
 int32_t smartCardLogin(struct sedContext *sedCtx);
+*/
 
 /*
+    TODO: Add this back once smartcard support has been updated
     @description: Attempt to login using smartCard authentication in conjuction with a password.
 
     @parameter sedCtx - Sed context Struct.
 
     @return 0 on success 
-*/
 int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx);
+*/
 
 /*
     @description: Attempt to login using two different passwords
