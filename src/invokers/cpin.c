@@ -617,9 +617,10 @@ int8_t cpin_getAuthenticationType(struct sedContext *sedCtx, SedAccounts user, u
     if (userName[(strlen((char *)userName)) - 1] == 'P')
         return 'P';
         
+    // TODO: Re-add once smartcard support is updated
     /* Set authenticationType to SmartCard */
-    else if (userName[(strlen((char *)userName)) - 1] == 'S')
-        return 'S';
+    // else if (userName[(strlen((char *)userName)) - 1] == 'S')
+    //    return 'S';
              
     /* Set the authenticationType to USB */
     else if (userName[(strlen((char *)userName)) - 1] == 'U')

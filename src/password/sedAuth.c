@@ -316,6 +316,8 @@ uint32_t setupUsbForUser(struct sedContext *sedCtx, SedAccounts accountType, uin
     return 0;
 }
 
+/*
+TODO: Re-add once smartcard support is updated
 uint32_t setupSmartCardWithPasswordForUser(struct sedContext *sedCtx, struct userInfo user, uint8_t *passwordHash)
 {
     uint8_t randomString[MAX_PASSWORD_LEN], encBuffer[MAX_ENCRYPT_SIZE], salt[MAX_SALT_LENGTH];
@@ -338,32 +340,32 @@ uint32_t setupSmartCardWithPasswordForUser(struct sedContext *sedCtx, struct use
 
     if (setPassword(prompt, tempPassword, MAX_PASSWORD_LEN, &complexity, 3) != NULL)
     {
-        /* Hash the users password with the generated salt, then hash that hash with the randomstring */          
+        // Hash the users password with the generated salt, then hash that hash with the randomstring
         if (hashWithSaltAndRandomString(tempPassword, salt, randomString, passwordHash) == NULL)
             return sedError;
 
         memset(tempPassword, 0, MAX_PASSWORD_LEN);
     }
     
-    /* Set the newly created password into the Cpin table */
+    // Set the newly created password into the Cpin table 
     if (cpin_setPassword(sedCtx, user.accountType, user.id, MAX_PASSWORD_LEN, passwordHash) & SED_ERROR)
         return (sedError = ECPINW);
 
     memset(passwordHash, 0, MAX_PASSWORD_LEN);
 
-    /* Encrypt the randomString that was created */
+    // Encrypt the randomString that was created 
     if (smartCardEncrypt(randomString, encBuffer) == NULL)
         return sedError;
 
     memset(randomString, 0, MAX_PASSWORD_LEN);
 
-    /* Store the users salt */
+    // Store the users salt 
     if (setSalt(sedCtx, user.accountType, user.id, salt))
         return sedError;
 
     memset(salt, 0, MAX_SALT_LENGTH);
 
-    /* Store the encrypted blob into the datastore */
+    // Store the encrypted blob into the datastore 
     if (setEncryptedBlob(sedCtx, user.accountType, user.id, encBuffer))
         return sedError;
 
@@ -374,7 +376,10 @@ uint32_t setupSmartCardWithPasswordForUser(struct sedContext *sedCtx, struct use
     
     return 0;
 }
+*/
 
+/*
+TODO: Re-add once smartcard support has been updated
 uint32_t setupSmartCardForUser(struct sedContext *sedCtx, struct userInfo user, uint8_t *passwordHash)
 {
     uint8_t randomString[MAX_PASSWORD_LEN] = {0}, encBuffer[MAX_ENCRYPT_SIZE] = {0}, salt[MAX_SALT_LENGTH] = {0};
@@ -388,17 +393,17 @@ uint32_t setupSmartCardForUser(struct sedContext *sedCtx, struct userInfo user, 
     if (hashWithSalt((char *)randomString, salt, passwordHash) == NULL)
         exit(EXIT_FAILURE);
  
-    /* Set the newly created password into the Cpin table as the user password */
+    // Set the newly created password into the Cpin table as the user password 
     if (cpin_setPassword(sedCtx, user.accountType, user.id, MAX_PASSWORD_LEN, passwordHash) & SED_ERROR)
         return (sedError = ECPINW);
 
     memset(passwordHash, 0, MAX_PASSWORD_LEN);
 
-    /* Encrypt the randomString with the private key that is on the smart card */
+    // Encrypt the randomString with the private key that is on the smart card 
     if (smartCardEncrypt(randomString, encBuffer) == NULL)
         return sedError;
 
-    /* Store the users salt into the correct offset of that account */
+    // Store the users salt into the correct offset of that account 
     if (setSalt(sedCtx, user.accountType, user.id, salt))
     {
         memset(randomString, 0, MAX_PASSWORD_LEN);
@@ -409,7 +414,7 @@ uint32_t setupSmartCardForUser(struct sedContext *sedCtx, struct userInfo user, 
     memset(randomString, 0, MAX_PASSWORD_LEN);
     memset(salt, 0, MAX_SALT_LENGTH);
 
-    /* Store the encrypted blob into the datastore */
+    // Store the encrypted blob into the datastore 
     if (setEncryptedBlob(sedCtx, user.accountType, user.id, encBuffer))
         return sedError;
 
@@ -421,6 +426,7 @@ uint32_t setupSmartCardForUser(struct sedContext *sedCtx, struct userInfo user, 
 
     return 0;
 }
+*/
 
 uint32_t setupTwoPasswordsForUser(struct sedContext *sedCtx, struct userInfo user, uint8_t *passwordHash)
 {
@@ -662,6 +668,8 @@ int32_t usbLogin(struct sedContext *sedCtx)
     return 1;
 }
 
+/*
+TODO: Re-add once smartcard support has been updated
 int32_t smartCardLogin(struct sedContext *sedCtx)
 {
     int32_t retries = 0, id, retVal;
@@ -669,7 +677,7 @@ int32_t smartCardLogin(struct sedContext *sedCtx)
     uint8_t salt[MAX_SALT_LENGTH] = {0}, encryptedBlob[MAX_ENCRYPT_SIZE] = {0};
     SedAccounts account;
 
-    /* Backup information, since it will be manipulated by other functions */
+    // Backup information, since it will be manipulated by other functions 
     account = sedCtx->account;
     id = sedCtx->id;
 
@@ -678,7 +686,7 @@ int32_t smartCardLogin(struct sedContext *sedCtx)
 
     memset(salt, 0, MAX_SALT_LENGTH);
 
-    /* Start session as anybody under the Admin1 account */
+    // Start session as anybody under the Admin1 account 
     retVal = sessionManager_startSession(sedCtx, 1, 0, NULL); 
     ERROR_CHECK(retVal, ERROR_START_SESSION)
 
@@ -690,10 +698,10 @@ int32_t smartCardLogin(struct sedContext *sedCtx)
 
     sessionManager_closeSession(sedCtx);
 
-    /* Gives the user x amount of attempts to enter their PIN correctly */
+    // Gives the user x amount of attempts to enter their PIN correctly 
     while (retries != ATTEMPTS_ALLOWED)
     {
-        /* Decrypt the encrypted the blob with the private key on the smartcard */
+        // Decrypt the encrypted the blob with the private key on the smartcard 
         if (smartCardDecrypt(encryptedBlob, randomString) == NULL)
         {
             fprintf(stderr, "Error: Failed to unlock the drive\n");
@@ -704,14 +712,14 @@ int32_t smartCardLogin(struct sedContext *sedCtx)
         if (hashWithSalt((char *)randomString, salt, hashedPassword) == NULL)
             exit(EXIT_FAILURE);
             
-        /* Restore values and attempt to login */
+        // Restore values and attempt to login 
         sedCtx->account = account;
         sedCtx->id = id;
         
         if ((sessionManager_startSession(sedCtx, 1, MAX_PASSWORD_LEN, hashedPassword)) & SED_ERROR)
             retries++;
             
-        /* Successful Login */
+        // Successful Login 
         else
         {
             memset(encryptedBlob, 0, MAX_ENCRYPT_SIZE);
@@ -725,7 +733,10 @@ int32_t smartCardLogin(struct sedContext *sedCtx)
     fprintf(stderr, "Too many Login attempts\n");
     return 1;
 }
+*/
 
+/*
+TODO: re-add once smart card support has been updated
 int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
 {
     int32_t retries = 0, id, retVal;
@@ -734,7 +745,7 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
     char password[MAX_PASSWORD_LEN] = {0};
     SedAccounts account;
 
-    /* Backup information, since it will be manipulated by other functions */
+    // Backup information, since it will be manipulated by other functions 
     account = sedCtx->account;
     id = sedCtx->id;
 
@@ -743,7 +754,7 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
 
     memset(salt, 0, MAX_SALT_LENGTH);
 
-    /* Start session as anybody under the Admin1 account */
+    // Start session as anybody under the Admin1 account 
     retVal = sessionManager_startSession(sedCtx, 1, 0, NULL); 
     ERROR_CHECK(retVal, ERROR_START_SESSION)
 
@@ -752,7 +763,7 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
 
     sessionManager_closeSession(sedCtx);
 
-    /* Give them x amount of attemps to get both their PIN and password correct */
+    // Give them x amount of attemps to get both their PIN and password correct 
     while (retries != ATTEMPTS_ALLOWED)
     {
         retVal = sessionManager_startSession(sedCtx, 1, 0, NULL); 
@@ -763,7 +774,7 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
 
         sessionManager_closeSession(sedCtx);
 
-        /* Decrypt blob with the private key from the smartCard */
+        // Decrypt blob with the private key from the smartCard 
         if (smartCardDecrypt(encryptedBlob, randomString) == NULL)
         {
             fprintf(stderr, "Error: Failed to unlock the drive\n");
@@ -774,21 +785,21 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
         if (promptPassword("Enter password: ", password, MAX_PASSWORD_LENGTH) == NULL)
                 exit(EXIT_FAILURE);
 
-        /* Check to see if Distress password is entered */
+        // Check to see if Distress password is entered 
         attemptDistress(sedCtx, password);
                 
-        /* Hashes the password that the user entered with the salt, then hash that with the random string */
+        // Hashes the password that the user entered with the salt, then hash that with the random string 
         if (hashWithSaltAndRandomString(password, salt, randomString, hashedPassword) == NULL)
                 exit(EXIT_FAILURE);    
             
-        /* Restore user credential and attempt to login */
+        // Restore user credential and attempt to login 
         sedCtx->account = account;
         sedCtx->id = id;
         
         if ((sessionManager_startSession(sedCtx, 1, MAX_PASSWORD_LEN, hashedPassword)) & SED_ERROR)
             retries++;
             
-        /* Successful login */
+        // Successful login
         else
         {
             memset(hashedPassword, 0, MAX_PASSWORD_LEN);
@@ -804,6 +815,7 @@ int32_t smartCardWithPasswordLogin(struct sedContext *sedCtx)
     fprintf(stderr, "Too many Login attempts\n");
     return 1;
 }
+*/
 
 int32_t twoPasswordLogin(struct sedContext *sedCtx)
 {
@@ -895,13 +907,17 @@ uint32_t authenticateUserByID(struct sedContext *sedCtx, SedAccounts account, ui
             retVal = passwordLogin(sedCtx, NULL);
             break;
         
+        /*
         case 'S':
             retVal = smartCardLogin(sedCtx);
             break;
+        */
         
+        /*
         case 'T':
             retVal = smartCardWithPasswordLogin(sedCtx);
             break;
+        */
         
         case 'U':
             retVal = usbLogin(sedCtx);

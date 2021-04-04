@@ -213,9 +213,10 @@ void menu_changePassword(struct sedContext *sedCtx)
     if (getUserInformationFromUserName(sedCtx, &user))
         menu_displayError(sedCtx, sedError);
 
+    // TODO: Add smartcard and smartcard + password once smartcard support is updated
     /* Allow the user to select the new authentication type */
     printf("%s\n\n", AUTH_CHOICE);
-    printf("1) Password\n2) SmartCard\n3) SmartCard + Password\n4) USB\n5) Two Passwords\n"); 
+    printf("1) Password\n2) USB\n3) Two Passwords\n"); 
     choice = getMenuChoice();
 
     system("clear");
