@@ -1,6 +1,7 @@
 #include "../include/sed/sed.h"
 #include "../include/password/sedAuth.h"
 #include "../include/menu/adminMenu.h"
+#include <ctype.h>
 
 uint8_t gVerbose = 0;
 uint32_t sedError = 0;
@@ -102,7 +103,7 @@ void sed_cleanup(struct sedContext *sedCtx)
     if (sedCtx->packet)
         free(sedCtx->packet);
 
-	free(sedCtx);
+    free(sedCtx);
 }
 
 void sed_enableVerbose()
@@ -2374,142 +2375,5 @@ uint32_t stringToLower(char *str)
     for (i = 0; i < length; i++)
         str[i] = tolower(str[i]); 
 
-    /*
-        while (*str != 0)
-        {
-            *str++ = tolower(*str++);
-        }
-
-        *str = '\0';
-    */
-        
     return 0;
-}
-
-char *selectUsbDevice(char *usbDevice, uint32_t size, int32_t onLogin)
-{
-    DIR *dirp;
-    struct dirent *devices;
-    int32_t i = 0, fd, count = 0;
-    char deviceName[MAXNAMLEN] = {0}, isRemovable[2] = {0}, usbDevices[10][12], choice;
-    char blockDevice[] = "/sys/block/";
-
-refresh:
-
-    system("clear");   
-    
-    for (i = 0; i < 10; i++)
-        memset(usbDevices[i], 0, 12);
-
-    memset(usbDevice, 0, MAX_NAME_LENGTH);
-    count = 0;
-
-    /* All of the block devices are located in /sys/block */
-    if ((dirp = opendir(blockDevice)) == NULL)
-    {
-        perror("Error(opendir) ");
-        exit(EXIT_FAILURE);
-    }
-
-    /* Get all of the block devices that are in that directory */
-    for (i = 0; i < 20; i++)
-    {
-        memset(deviceName, 0, MAXNAMLEN);
-        memset(isRemovable, 0, 2);
-
-        if ((devices = readdir(dirp)) == NULL)
-            break;
-
-        /* Dont want to check out files ., .., or sr* */
-        if ((!strncmp(devices->d_name, ".", 1) || (!strncmp(devices->d_name, "..", 2) || (!strncmp(devices->d_name, "sr", 2)))))
-            continue;
-    
-        /* /sys/block/DEVICE_NAME/removable will be set if it is removable storage */
-        if (strlen(blockDevice) > sizeof(deviceName))
-            return NULL;
-
-        strncpy(deviceName, blockDevice, sizeof(deviceName));
-        strcat(deviceName, devices->d_name); 
-        strcat(deviceName, "/removable");
-
-        /* Read the file removable to see if the byte is set */
-        if ((fd = open(deviceName, O_RDONLY)) < 1)
-            usbCleanup(dirp, fd, 1);
-
-        if ((read(fd, isRemovable, 1)) != 1)
-            usbCleanup(dirp, fd, 1);
-
-        close(fd);
-        
-        if ((!strncmp(isRemovable, "1", 1)))
-        {
-            strcat(usbDevices[count], "/dev/");
-            strcat(usbDevices[count++], devices->d_name);
-        } 
-    }
-
-    /* Close Main path with error checking */
-    usbCleanup(dirp, 0, 0);
-
-    printf("Select USB Storage Device\n");
-    printf("-------------------------\n");
-    for (i = 0; i < count; i++)
-            printf("%d) %s\n", i + 1, usbDevices[i]);
-
-    printf("\n");
-
-    if (!onLogin)
-        printf("%d) Go Back\n", i+1);
-    
-    printf("\nPress R to refresh the list...\n");
-    
-    choice = getMenuChoice();
-
-    /* The user wants to "Go Back" */
-    if (!onLogin)
-    {
-        if ((choice - 0x30) == (i + 1))
-            return NULL;
-    }
-
-    /* Refresh the USB list */
-    if (choice ==  'r' || choice == 'R')
-        goto refresh;
-
-    if ((choice - 0x30) > count || (choice - 0x30) < 1)
-        goto refresh;
-
-    else
-    {
-        if (strlen(usbDevices[(choice - 0x30) - 1]) > MAX_PATH_LENGTH)
-            return NULL;
-
-
-        strncpy(usbDevice, usbDevices[(choice - 0x30) - 1], size);
-        strcat(usbDevice, "1");   
-    }
-    
-    return usbDevice;
-}
-
-uint32_t usbCleanup(DIR *dirp, int32_t fd, int32_t onError)
-{
-    if (onError)
-        perror("Error ");
-
-    /* Close file if provided */
-    if (fd)
-        close(fd);
-
-    /* Close main directory */
-    if (closedir(dirp))
-    {
-        perror("Error: ");
-        exit(EXIT_FAILURE);
-    }
-
-    if (onError)
-        exit(EXIT_FAILURE);
-    else
-        return 0;    
 }

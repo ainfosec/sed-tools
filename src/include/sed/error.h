@@ -81,6 +81,7 @@
 #define EBADINPUT  64  /* Something went wrong while reading in a string from the user */
 #define EPBAEXIST  65  /* Something went wrong while reading the pba */
 #define EUSBMOUNT  66  /* Something went wrong when trying to mount the usb device */
+#define EBPOINTER  67  /* Bad pointer detected */
 
 #define ERROR_WRITE_COMPLEXITY             "Could not set Password Complexity Values"
 #define ERROR_READ_COMPLEXITY              "Could not read Password Complexity Values"
@@ -257,6 +258,6 @@ const char *getStringError(uint32_t errorNum);
 *    @param errorNum  The error number to get the associated string for
 *    @return Error String
 */
-inline void printError(uint32_t errorNum);
+void printError(uint32_t errorNum);
 
 #endif /*__SED_ERRORS_H_ */
