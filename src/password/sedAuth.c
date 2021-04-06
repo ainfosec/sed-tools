@@ -1,4 +1,5 @@
 #include "../include/password/sedAuth.h"
+#include <openssl/evp.h>
 
 
 uint32_t generateSalt(uint8_t *saltBuffer, uint8_t numBytes)

@@ -27,7 +27,7 @@ all: sed-tools
 	$(GCC) $(CFLAGS) -o $@ $<
 
 sed-tools: $(OBJECTS)
-	$(GCC) $(LDFLAGS) -o $@ $(OBJECTS)
+	$(GCC) -o $@ $(OBJECTS) $(LDFLAGS)
 
 .PHONY: install
 install: sed-tools

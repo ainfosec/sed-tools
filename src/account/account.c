@@ -211,8 +211,14 @@ uint32_t getAccountTypeAndId(struct sedContext *sedCtx, struct userInfo *user)
 
         if ((strlen(user->userName) == strlen(name)) && (strncmp(user->userName, name, strlen(user->userName)) == 0))
         {
-            if (reverseOffsetLookUp(offset, &user->accountType, &user->id))
+            SedAccounts accountType = user->accountType;
+            uint8_t id = user->id;
+
+            if (reverseOffsetLookUp(offset, &accountType, &id))
                 return sedError;
+
+            user->accountType = accountType;
+            user->id = id;
 
             return 0;
         }
@@ -732,13 +738,17 @@ uint32_t setupNewAuth(struct sedContext *sedCtx, struct userInfo user)
             break;
         
         case '2':
+            /*
             if (setupSmartCardForUser(sedCtx, user, passwordHash) == 1)
                return sedError;
+            */
             break;
         
         case '3':
+            /*
             if (setupSmartCardWithPasswordForUser(sedCtx, user, passwordHash) == 1)
                 return sedError;
+            */
             break;
         
         case '4':
@@ -842,11 +852,11 @@ uint32_t changePassword(struct sedContext *sedCtx)
             break;
         
         case '2':
-            retVal = setupSmartCardForUser(sedCtx, user, passwordHash);
+            //retVal = setupSmartCardForUser(sedCtx, user, passwordHash);
             break;
         
         case '3':
-            retVal = setupSmartCardWithPasswordForUser(sedCtx, user, passwordHash);
+            //retVal = setupSmartCardWithPasswordForUser(sedCtx, user, passwordHash);
             break;
         
         case '4':
