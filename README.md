@@ -13,12 +13,12 @@ Get the latest version of the sed-tools from GitHub:
 
 ``` bash
 git clone https://github.com/ainfosec/sed-tools
-TBD
+cd sed-tools
+make
 ```
-
-Enjoy:
-```
-TBD
+## Dependencies
+``` bash
+# apt install -y git make gcc libssl-dev libp11-dev
 ```
 
 ## Interested In Working For AIS?
